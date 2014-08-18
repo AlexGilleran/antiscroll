@@ -465,7 +465,9 @@
       size = w1 - w2;
     }
 
-    return size;
+    // Super duper hack: FF on OSX has 0 scrollbar width but doesn't hide the scrollbar - this extends
+    // the inner div for all browsers
+    return size ? size : 14;
   };
 
 })(jQuery);
